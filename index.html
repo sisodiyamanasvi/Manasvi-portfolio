@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manasvi Sisodiya | Forensic Science Portfolio</title>
+<meta name="description" content="Forensic science portfolio of Manasvi Sisodiya, a first-year B.Sc. Forensic Sciences (Hons.) undergraduate at Lovely Professional University, Punjab, India.">
+<meta name="theme-color" content="#0f1a2c">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1a2c;
+    --navy-rgb: 15, 26, 44;
+    --teal: #20b8b0;
+    --white: #ffffff;
+    --text-soft: #c4cbd6;
+    --text-mute: #8d97a8;
+    --serif: "Playfair Display", "Times New Roman", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --pad: clamp(1.5rem, 5.6vw, 4.5rem);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--sans);
+    overflow-x: hidden;
+  }
+
+  .hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: clamp(1.5rem, 4.2vw, 3.9rem) var(--pad) clamp(1.5rem, 4.4vw, 4rem);
+    padding-top: max(clamp(1.5rem, 4.2vw, 3.9rem), env(safe-area-inset-top));
+    padding-bottom: max(clamp(1.5rem, 4.4vw, 4rem), env(safe-area-inset-bottom));
+    background: var(--navy);
+    overflow: hidden;
+  }
+
+  /* Portrait layer */
+  .hero__photo {
+    position: absolute;
+    z-index: -3;
+    top: 0; right: 0; bottom: 0;
+    width: 64%;
+    margin: 0;
+  }
+  .hero__photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: 42% 22%;
+  }
+
+  /* Navy gradients blending the photo into the page */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(90deg,
+        rgba(var(--navy-rgb), 1) 0%,
+        rgba(var(--navy-rgb), 1) 30%,
+        rgba(var(--navy-rgb), .78) 44%,
+        rgba(var(--navy-rgb), .42) 62%,
+        rgba(var(--navy-rgb), .30) 100%),
+      linear-gradient(180deg,
+        rgba(var(--navy-rgb), .55) 0%,
+        rgba(var(--navy-rgb), 0) 22%,
+        rgba(var(--navy-rgb), 0) 55%,
+        rgba(var(--navy-rgb), .85) 88%,
+        rgba(var(--navy-rgb), 1) 100%);
+  }
+
+  /* Technical grid */
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(120, 160, 200, .07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120, 160, 200, .07) 1px, transparent 1px),
+      linear-gradient(rgba(120, 160, 200, .04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120, 160, 200, .04) 1px, transparent 1px);
+    background-size: 135px 135px, 135px 135px, 27px 27px, 27px 27px;
+  }
+
+  /* Top bar */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .tag {
+    margin: 0;
+    padding: .72rem 1rem;
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    font: 400 clamp(.62rem, 1.35vw, .8rem)/1 var(--mono);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .counter {
+    margin: .55rem 0 0;
+    color: var(--text-mute);
+    font: 400 clamp(.6rem, 1.3vw, .78rem)/1 var(--mono);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .counter span { color: var(--teal); }
+
+  /* Main content */
+  .content {
+    align-self: center;
+    max-width: 40rem;
+    padding: clamp(1.5rem, 4svh, 4rem) 0 clamp(1rem, 2svh, 2rem);
+    animation: rise .9s cubic-bezier(.2, .7, .2, 1) both;
+  }
+  .eyebrow {
+    margin: 0 0 1.15rem;
+    color: var(--teal);
+    font: 400 clamp(.68rem, 1.4vw, .8rem)/1 var(--mono);
+    letter-spacing: .26em;
+    text-transform: uppercase;
+  }
+  .name {
+    margin: 0;
+    font: 700 clamp(3.4rem, min(9.4vw, 14svh), 7.2rem)/.98 var(--serif);
+    letter-spacing: -.005em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .name span { display: block; }
+  .rule {
+    width: clamp(3.4rem, 6.8vw, 4.1rem);
+    height: 4px;
+    margin: clamp(1.4rem, 3vw, 2.1rem) 0 clamp(1.4rem, 3vw, 2rem);
+    background: var(--teal);
+    border: 0;
+  }
+  .course {
+    margin: 0 0 .85rem;
+    font: 500 clamp(.82rem, 1.75vw, 1.1rem)/1.4 var(--mono);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+  }
+  .affil {
+    margin: 0 0 .7rem;
+    color: var(--text-soft);
+    font: 400 clamp(.9rem, 1.9vw, 1.1rem)/1.5 var(--sans);
+  }
+  .affil .sep {
+    display: inline-block;
+    width: 1px;
+    height: 1.05em;
+    margin: 0 .6em;
+    vertical-align: -.15em;
+    background: var(--text-soft);
+  }
+  .place {
+    margin: 0;
+    color: var(--teal);
+    font: 400 clamp(.66rem, 1.35vw, .8rem)/1 var(--mono);
+    letter-spacing: .22em;
+    text-transform: uppercase;
+  }
+  .quote {
+    margin: clamp(1.4rem, 4svh, 3.4rem) 0 0;
+    max-width: 21rem;
+    font: italic 400 clamp(1.15rem, 2.5vw, 1.6rem)/1.35 var(--serif);
+    color: #eef1f6;
+  }
+  .short-rule {
+    width: clamp(4.5rem, 14vw, 8.2rem);
+    height: 1px;
+    margin: clamp(1.5rem, 5svh, 4rem) 0 0;
+    border: 0;
+    background: rgba(255, 255, 255, .45);
+  }
+
+  /* Bottom navigation */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem 2rem;
+  }
+  .nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .9rem clamp(1.1rem, 2.6vw, 2rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .nav a {
+    display: inline-block;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--teal);
+    color: var(--white);
+    font: 400 clamp(.66rem, 1.4vw, .8rem)/1 var(--mono);
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .nav a[aria-disabled="true"] { cursor: default; }
+  .nav a.linkedin { color: var(--teal); }
+  .nav a:hover { color: var(--teal); }
+  .nav a.linkedin:hover { color: var(--white); }
+  .nav a:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 5px;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Tablet */
+  @media (max-width: 900px) {
+    .hero__photo { width: 78%; }
+    .hero__photo img { object-position: 40% 18%; }
+    .hero::before {
+      background:
+        linear-gradient(90deg,
+          rgba(var(--navy-rgb), 1) 0%,
+          rgba(var(--navy-rgb), .9) 32%,
+          rgba(var(--navy-rgb), .5) 60%,
+          rgba(var(--navy-rgb), .32) 100%),
+        linear-gradient(180deg,
+          rgba(var(--navy-rgb), .55) 0%,
+          rgba(var(--navy-rgb), 0) 20%,
+          rgba(var(--navy-rgb), 0) 50%,
+          rgba(var(--navy-rgb), .88) 88%,
+          rgba(var(--navy-rgb), 1) 100%);
+    }
+  }
+
+  /* Phone */
+  @media (max-width: 600px) {
+    .hero__photo { width: 100%; }
+    .hero__photo img { object-position: 46% 12%; }
+    .hero::before {
+      background:
+        linear-gradient(180deg,
+          rgba(var(--navy-rgb), .7) 0%,
+          rgba(var(--navy-rgb), .35) 18%,
+          rgba(var(--navy-rgb), .55) 42%,
+          rgba(var(--navy-rgb), .9) 68%,
+          rgba(var(--navy-rgb), 1) 100%),
+        linear-gradient(90deg,
+          rgba(var(--navy-rgb), .55) 0%,
+          rgba(var(--navy-rgb), 0) 70%);
+    }
+    .hero { grid-template-rows: auto 1fr auto; }
+    .topbar { flex-direction: column; gap: .9rem; }
+    .counter { margin: 0; }
+    .content { align-self: end; padding-top: 6rem; padding-bottom: 1.5rem; }
+    .short-rule { margin-top: 2rem; }
+    .nav { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+  }
+
+  @media (max-width: 360px) {
+    .tag { letter-spacing: .12em; white-space: normal; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .content { animation: none; }
+    .nav a { transition: none; }
+  }
+</style>
+</head>
+<body>
+  <main class="hero" id="home">
+    <figure class="hero__photo">
+      <!-- Place the portrait at assets/manasvi-portrait.jpg -->
+      <img src="assets/manasvi-portrait.jpg" width="1082" height="1454"
+           alt="Manasvi Sisodiya smiling in a white forensic science lab coat, standing in a forensic laboratory">
+    </figure>
+
+    <header class="topbar">
+      <p class="tag">Forensic Science Portfolio</p>
+      <p class="counter">Portfolio <span>/</span> 01 — 08</p>
+    </header>
+
+    <section class="content" aria-labelledby="site-name">
+      <p class="eyebrow">Home</p>
+      <h1 class="name" id="site-name"><span>Manasvi</span><span>Sisodiya</span></h1>
+      <hr class="rule">
+      <p class="course">B.Sc. Forensic Sciences (Hons.)</p>
+      <p class="affil">First-Year Undergraduate<span class="sep" aria-hidden="true"></span>Lovely Professional University</p>
+      <p class="place">Punjab, India</p>
+      <blockquote class="quote">
+        <p style="margin:0">“Exploring the science behind evidence, investigation, and the pursuit of truth.”</p>
+      </blockquote>
+      <hr class="short-rule">
+    </section>
+
+    <nav class="nav" aria-label="Portfolio">
+      <ul>
+        <li><a href="#" aria-disabled="true" tabindex="-1" data-placeholder>About</a></li>
+        <li><a href="#" aria-disabled="true" tabindex="-1" data-placeholder>Education</a></li>
+        <li><a href="#" aria-disabled="true" tabindex="-1" data-placeholder>Interests</a></li>
+        <li><a href="#" aria-disabled="true" tabindex="-1" data-placeholder>Contact</a></li>
+      </ul>
+      <a class="linkedin" href="https://www.linkedin.com/in/manasvi-sisodiya-704085449/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Manasvi Sisodiya on LinkedIn (opens in a new tab)">LinkedIn</a>
+    </nav>
+  </main>
+
+  <script>
+    // Placeholder links: keep the look, do nothing (no other sections exist yet).
+    document.querySelectorAll('a[data-placeholder]').forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); });
+    });
+  </script>
+</body>
+</html>
